@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All Posts</h2>
+<ul>
+  {% for post in post_list %}
+  <li><strong><a href="{% url post_get_one %}?post_id={{post.id}}">{{ post.title }}</a></strong> : {{ post.comments|length }} comments</li>
+  {% endfor %}
+</ul>
+{% endblock %}
